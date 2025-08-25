@@ -7,7 +7,11 @@ import { Download, Mail, MapPin } from "lucide-react";
 
 const tecnologias = [
 	"Spring Boot",
+	"Next.js",
 	"React.js",
+	"Angular",
+	"NestJS",
+	"Node.js",
 	"TypeScript",
 	"Apache Kafka",
 	"Microservicios",
@@ -34,7 +38,7 @@ export default function HeroSection() {
 							<AvatarImage
 								src="images/natalia_duran.jpg"
 								alt="Natalia Duran"
-								style={{ objectFit: "cover" }}
+								style={{ objectFit: "cover", scale: "130%" }}
 							/>
 							<AvatarFallback className="text-4xl font-bold bg-gradient-to-br from-indigo-600 to-blue-950 text-white">
 								ND
