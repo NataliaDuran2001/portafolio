@@ -9,7 +9,7 @@ const projects = [
 		title: "Sistema de Fidelización Bancaria",
 		description:
 			"Plataforma completa de microservicios para gestión de programas de lealtad con arquitectura orientada a eventos.",
-		image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop",
+		image: "images/fidelizacion/lista_comercios.png",
 		achievements: [
 			"75% aumento en interacción de clientes",
 			"Arquitectura de streaming con Kafka",
@@ -21,10 +21,38 @@ const projects = [
 		gradient: "from-blue-500 to-cyan-500",
 	},
 	{
+		title: "Portal de Descuentos Bancarios",
+		description: "Plataforma web para la información y gestión de descuentos bancarios para clientes.",
+		image: "images/descuentos/descuentos.png",
+		achievements: [
+			"40% aumento en interacción de clientes",
+			"Optimización de rendimiento y SEO con Next.js",
+			"Integración en portal bancario",
+		],
+		technologies: ["Next.js", "React.js"],
+		category: "Fintech",
+		icon: TrendingUp,
+		gradient: "from-blue-500 to-cyan-500",
+	},
+	{
+		title: "Portal de Fidelización Bancaria",
+		description: "Plataforma web para la información de programas de lealtad bancarios.",
+		image: "images/vamos/vamos.png",
+		achievements: [
+			"80% aumento en fidelización de clientes",
+			"Optimización de rendimiento y SEO con Next.js",
+			"Integración en portal bancario",
+		],
+		technologies: ["Next.js", "React.js"],
+		category: "Fintech",
+		icon: TrendingUp,
+		gradient: "from-blue-500 to-cyan-500",
+	},
+	{
 		title: "Sistema Anti-Lavado de Dinero (AMLC)",
 		description:
 			"Sistema crítico de cumplimiento normativo con precisión del 99% para detección y prevención de lavado de dinero.",
-		image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=500&h=300&fit=crop",
+		image: "images/amlc/amlc.png",
 		achievements: [
 			"99% de precisión en detección",
 			"Cumplimiento normativo total",
@@ -39,7 +67,7 @@ const projects = [
 		title: "Integración SAP B1 - Gestión de Almacenes",
 		description:
 			"Servicio de integración completo con SAP Business One para optimización de procesos de despacho y almacén.",
-		image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=500&h=300&fit=crop",
+		image: "images/synergy/synergy.jpg",
 		achievements: [
 			"60% mejora en transparencia operacional",
 			"40% optimización de eficiencia",
@@ -54,7 +82,7 @@ const projects = [
 		title: "App Móvil de Pedidos - Flutter",
 		description:
 			"Aplicación móvil que digitalizó completamente el proceso de toma de pedidos, integrándose con sistemas ERP.",
-		image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&h=300&fit=crop",
+		image: "images/hoguera/hoguera.jpg",
 		achievements: ["100% digitalización de procesos", "80% aumento en eficiencia", "Integración completa con ERP"],
 		technologies: ["Flutter", "ASP.NET", "ERP Integration", "Mobile Development"],
 		category: "Mobile",
@@ -64,7 +92,7 @@ const projects = [
 	{
 		title: "App bancaria - GanaMóvil",
 		description: "Diseño e implementación de iniciativas de negocio para aplicación móvil bancaria.",
-		image: "images/ganamovil.jpg",
+		image: "images/ganamovil/ganamovil.jpeg",
 		achievements: [
 			"Alta disponibilidad del servicio",
 			"Escalabilidad horizontal",
@@ -72,16 +100,16 @@ const projects = [
 		],
 		technologies: ["Spring Boot", "Docker", "Kubernetes", "Jenkins", "Grafana"],
 		category: "Architecture",
-		icon: TrendingUp,
+		icon: Users,
 		gradient: "from-indigo-500 to-blue-500",
 	},
 	{
 		title: "Portal de Seguros - Arquitectura Hexagonal",
 		description:
 			"Sistema de gestión de seguros implementado con arquitectura hexagonal y principios de clean code.",
-		image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=500&h=300&fit=crop",
+		image: "images/seguros/seguros.png",
 		achievements: ["Arquitectura hexagonal", "Clean code implementation", "Productos de seguros unipersonales"],
-		technologies: ["Spring Boot", "Angular", "Clean Architecture", "Hexagonal Pattern"],
+		technologies: ["Next.js", "React.js", "Clean Architecture", "Hexagonal Pattern", "PostgreSQL"],
 		category: "Insurance",
 		icon: Shield,
 		gradient: "from-orange-500 to-red-500",
