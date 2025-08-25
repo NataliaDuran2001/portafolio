@@ -1,7 +1,7 @@
 "use client";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, TrendingUp, Users, Zap, Shield } from "lucide-react";
 
 const projects = [
@@ -118,9 +118,9 @@ const projects = [
 
 export default function ProjectsSection() {
 	return (
-		<section id="projects" className="py-20 bg-white">
-			<div className="container mx-auto px-4">
-				<div className="max-w-7xl mx-auto">
+		<section id="projects" className="py-20 bg-stone-100">
+			<div className="container mx-auto 2xl:max-w-9/10 px-5">
+				<div className="mx-auto">
 					{/* Header */}
 					<div className="text-center mb-16">
 						<h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Proyectos Destacados</h2>
@@ -131,7 +131,7 @@ export default function ProjectsSection() {
 					</div>
 
 					{/* Projects Grid */}
-					<div className="grid lg:grid-cols-2 gap-8">
+					<div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
 						{projects.map((project, index) => (
 							<Card
 								key={index}
@@ -142,9 +142,9 @@ export default function ProjectsSection() {
 									<img
 										src={project.image}
 										alt={project.title}
-										className="w-full h-88 object-cover group-hover:scale-110 transition-transform duration-500"
+										className="w-full h-88 object-cover scale-95 group-hover:scale-110 transition-transform duration-300"
 									/>
-									<div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+									<div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
 									<div
 										className={`absolute top-4 left-4 w-12 h-12 bg-gradient-to-br from-indigo-600 to-blue-950 rounded-full flex items-center justify-center shadow-lg`}
 									>
