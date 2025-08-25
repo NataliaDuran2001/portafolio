@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Github, Linkedin, Mail } from "lucide-react";
 
 const navItems = [
@@ -72,17 +72,17 @@ export default function Navbar() {
 								target="_blank"
 								rel="noopener noreferrer"
 							>
-								<Linkedin className="w-4 h-4" />
+								<Linkedin className="w-4 h-4 text-gray-600" />
 							</a>
 						</Button>
 						<Button variant="ghost" size="sm" asChild>
 							<a href="mailto:nataliaduran.dev@gmail.com" target="_blank" rel="noopener noreferrer">
-								<Mail className="w-4 h-4" />
+								<Mail className="w-4 h-4 text-gray-600" />
 							</a>
 						</Button>
 						<Button variant="ghost" size="sm" asChild>
-							<a href="https://github.com" target="_blank" rel="noopener noreferrer">
-								<Github className="w-4 h-4" />
+							<a href="https://github.com/NataliaDuran2001" target="_blank" rel="noopener noreferrer">
+								<Github className="w-4 h-4 text-gray-600" />
 							</a>
 						</Button>
 					</div>
@@ -91,11 +91,15 @@ export default function Navbar() {
 					<Sheet>
 						<SheetTrigger asChild className="lg:hidden">
 							<Button variant="ghost" size="sm">
-								<Menu className="w-5 h-5" />
+								<Menu className="w-5 h-5 text-gray-600" />
 							</Button>
 						</SheetTrigger>
-						<SheetContent>
-							<div className="flex flex-col space-y-6 mt-8">
+						<SheetContent className="w-1/2">
+							<SheetHeader>
+								<SheetTitle>Menú</SheetTitle>
+								<SheetDescription></SheetDescription>
+							</SheetHeader>
+							<div className="flex flex-col space-y-6 ml-2">
 								{navItems.map((item) => (
 									<button
 										key={item.name}
@@ -125,7 +129,11 @@ export default function Navbar() {
 										</a>
 									</Button>
 									<Button variant="ghost" size="sm" asChild>
-										<a href="https://github.com" target="_blank" rel="noopener noreferrer">
+										<a
+											href="https://github.com/NataliaDuran2001"
+											target="_blank"
+											rel="noopener noreferrer"
+										>
 											<Github className="w-4 h-4" />
 										</a>
 									</Button>
