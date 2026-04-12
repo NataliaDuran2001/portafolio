@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Download, Mail } from "lucide-react";
 import { ProjectCard } from "@/components/shared/project-card";
 import { featuredProjects } from "@/lib/data/projects";
@@ -123,18 +122,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Services CTA */}
+      {/* CTA */}
       <section className="bg-secondary/30">
         <div className="container mx-auto px-6 md:px-8 py-16">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
             <div>
-              <Badge variant="secondary" className="mb-2">{t("home.services.badge")}</Badge>
               <h3 className="text-lg font-semibold text-foreground mb-1">{t("home.services.title")}</h3>
               <p className="text-sm text-muted-foreground max-w-md">{t("home.services.desc")}</p>
             </div>
             <Button variant="outline" asChild className="flex-shrink-0">
-              <Link href="/services">
-                {t("home.services.cta")}
+              <Link href="/contact">
+                {t("home.cta.contact")}
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Link>
             </Button>
