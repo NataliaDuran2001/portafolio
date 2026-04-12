@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { ArrowUpRight } from "lucide-react";
@@ -19,12 +18,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
     <Link href={`/work/${project.slug}/`} className="group block">
       <article className="rounded-lg border border-border bg-card overflow-hidden transition-all duration-300 hover:border-foreground/20 hover:shadow-lg">
         <div className="relative aspect-video overflow-hidden">
-          <Image
+          <img
             src={img(project.image)}
             alt={l(project.title)}
-            fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            loading="lazy"
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         </div>
         <div className="p-6">

@@ -17,7 +17,7 @@ export function CaseStudyContent({ slug }: { slug: string }) {
 
   return (
     <div className="pt-16">
-      <article className="container mx-auto px-4 py-20">
+      <article className="container mx-auto px-6 md:px-8 py-20">
         <Link
           href="/work/"
           className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-12"

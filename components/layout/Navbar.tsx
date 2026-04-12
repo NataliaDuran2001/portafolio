@@ -24,7 +24,7 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-6 md:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2 group">
             <div className="w-8 h-8 bg-foreground rounded-lg flex items-center justify-center group-hover:bg-foreground/80 transition-colors">
