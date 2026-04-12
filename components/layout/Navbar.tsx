@@ -1,148 +1,121 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Github, Linkedin, Mail } from "lucide-react";
-
-const navItems = [
-	{ name: "Inicio", href: "#hero" },
-	{ name: "Sobre mí", href: "#about" },
-	{ name: "Experiencia", href: "#experience" },
-	{ name: "Proyectos", href: "#projects" },
-	{ name: "Habilidades", href: "#skills" },
-	{ name: "Educación", href: "#education" },
-	{ name: "Contacto", href: "#contact" },
-];
+import { ThemeToggle } from "@/components/shared/theme-toggle";
+import { LanguageToggle } from "@/components/shared/language-toggle";
+import { useLanguage } from "@/lib/i18n/language-context";
+import { personalInfo } from "@/lib/data/personal";
 
 export default function Navbar() {
-	const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+  const { t } = useLanguage();
 
-	useEffect(() => {
-		const handleScroll = () => {
-			setIsScrolled(window.scrollY > 50);
-		};
-		window.addEventListener("scroll", handleScroll);
-		return () => window.removeEventListener("scroll", handleScroll);
-	}, []);
+  const navItems = [
+    { name: t("nav.about"), href: "/about" },
+    { name: t("nav.experience"), href: "/experience" },
+    { name: t("nav.work"), href: "/work" },
+    { name: t("nav.services"), href: "/services" },
+    { name: t("nav.contact"), href: "/contact" },
+  ];
 
-	const scrollToSection = (href: string) => {
-		const element = document.querySelector(href);
-		if (element) {
-			element.scrollIntoView({ behavior: "smooth" });
-		}
-	};
+  return (
+    <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16">
+          <Link href="/" className="flex items-center gap-2 group">
+            <div className="w-8 h-8 bg-foreground rounded-lg flex items-center justify-center group-hover:bg-foreground/80 transition-colors">
+              <span className="text-background font-bold text-sm">ND</span>
+            </div>
+            <span className="font-semibold text-foreground hidden sm:inline">
+              Natalia Durán Oliva
+            </span>
+          </Link>
 
-	return (
-		<nav
-			className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-				isScrolled ? "bg-white/90 backdrop-blur-md shadow-lg border-b" : "bg-transparent"
-			}`}
-		>
-			<div className="container mx-auto px-4">
-				<div className="flex items-center justify-between h-16">
-					{/* Logo */}
-					<div className="flex items-center space-x-2">
-						<div className="w-8 h-8 bg-gradient-to-br from-indigo-600 to-blue-900 rounded-lg flex items-center justify-center">
-							<span className="text-white font-bold text-sm">ND</span>
-						</div>
-						<span className="font-bold text-xl bg-gradient-to-r from-blue-800 to-pink-800 bg-clip-text text-transparent">
-							Natalia Duran
-						</span>
-					</div>
+          <div className="hidden md:flex items-center gap-8">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`text-sm transition-colors ${
+                  pathname.startsWith(item.href)
+                    ? "text-foreground font-medium"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
 
-					{/* Desktop Navigation */}
-					<div className="hidden lg:flex items-center space-x-8">
-						{navItems.map((item) => (
-							<button
-								key={item.name}
-								onClick={() => scrollToSection(item.href)}
-								className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
-							>
-								{item.name}
-							</button>
-						))}
-					</div>
+          <div className="hidden md:flex items-center gap-1">
+            <LanguageToggle />
+            <ThemeToggle />
+            <Button variant="ghost" size="icon" className="w-8 h-8" asChild>
+              <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <Linkedin className="w-4 h-4" />
+              </a>
+            </Button>
+            <Button variant="ghost" size="icon" className="w-8 h-8" asChild>
+              <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <Github className="w-4 h-4" />
+              </a>
+            </Button>
+          </div>
 
-					{/* Social Links */}
-					<div className="hidden lg:flex items-center space-x-4">
-						<Button variant="ghost" size="sm" asChild>
-							<a
-								href="https://www.linkedin.com/in/natalia-duran-oliva/"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<Linkedin className="w-4 h-4 text-gray-600" />
-							</a>
-						</Button>
-						<Button variant="ghost" size="sm" asChild>
-							<a href="mailto:nataliaduran.dev@gmail.com" target="_blank" rel="noopener noreferrer">
-								<Mail className="w-4 h-4 text-gray-600" />
-							</a>
-						</Button>
-						<Button variant="ghost" size="sm" asChild>
-							<a href="https://github.com/NataliaDuran2001" target="_blank" rel="noopener noreferrer">
-								<Github className="w-4 h-4 text-gray-600" />
-							</a>
-						</Button>
-					</div>
-
-					{/* Mobile Menu */}
-					<Sheet>
-						<SheetTrigger asChild className="lg:hidden">
-							<Button variant="ghost" size="sm">
-								<Menu className="w-5 h-5 text-gray-600" />
-							</Button>
-						</SheetTrigger>
-						<SheetContent className="w-1/2">
-							<SheetHeader>
-								<SheetTitle>Menú</SheetTitle>
-								<SheetDescription></SheetDescription>
-							</SheetHeader>
-							<div className="flex flex-col space-y-6 ml-2">
-								{navItems.map((item) => (
-									<button
-										key={item.name}
-										onClick={() => scrollToSection(item.href)}
-										className="text-left text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium text-lg"
-									>
-										{item.name}
-									</button>
-								))}
-								<div className="flex items-center space-x-4 pt-6 border-t">
-									<Button variant="ghost" size="sm" asChild>
-										<a
-											href="https://www.linkedin.com/in/natalia-duran-oliva/"
-											target="_blank"
-											rel="noopener noreferrer"
-										>
-											<Linkedin className="w-4 h-4" />
-										</a>
-									</Button>
-									<Button variant="ghost" size="sm" asChild>
-										<a
-											href="mailto:nataliaduran.dev@gmail.com"
-											target="_blank"
-											rel="noopener noreferrer"
-										>
-											<Mail className="w-4 h-4" />
-										</a>
-									</Button>
-									<Button variant="ghost" size="sm" asChild>
-										<a
-											href="https://github.com/NataliaDuran2001"
-											target="_blank"
-											rel="noopener noreferrer"
-										>
-											<Github className="w-4 h-4" />
-										</a>
-									</Button>
-								</div>
-							</div>
-						</SheetContent>
-					</Sheet>
-				</div>
-			</div>
-		</nav>
-	);
+          <div className="flex md:hidden items-center gap-1">
+            <LanguageToggle />
+            <ThemeToggle />
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="w-8 h-8">
+                  <Menu className="w-5 h-5" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-64">
+                <SheetHeader>
+                  <SheetTitle className="text-left">{t("nav.menu")}</SheetTitle>
+                </SheetHeader>
+                <div className="flex flex-col gap-4 mt-8">
+                  {navItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className={`text-lg transition-colors ${
+                        pathname.startsWith(item.href)
+                          ? "text-foreground font-medium"
+                          : "text-muted-foreground hover:text-foreground"
+                      }`}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                  <div className="flex items-center gap-2 pt-6 border-t border-border">
+                    <Button variant="ghost" size="icon" asChild>
+                      <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <Linkedin className="w-4 h-4" />
+                      </a>
+                    </Button>
+                    <Button variant="ghost" size="icon" asChild>
+                      <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <Github className="w-4 h-4" />
+                      </a>
+                    </Button>
+                    <Button variant="ghost" size="icon" asChild>
+                      <a href={`mailto:${personalInfo.email}`} aria-label="Email">
+                        <Mail className="w-4 h-4" />
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
 }
