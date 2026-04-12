@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowUpRight } from "lucide-react";
 import { Project } from "@/lib/types";
 import { useLanguage } from "@/lib/i18n/language-context";
+import { img } from "@/lib/image-path";
 
 interface ProjectCardProps {
   project: Project;
@@ -19,7 +20,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
       <article className="rounded-lg border border-border bg-card overflow-hidden transition-all duration-300 hover:border-foreground/20 hover:shadow-lg">
         <div className="relative aspect-video overflow-hidden">
           <Image
-            src={project.image}
+            src={img(project.image)}
             alt={l(project.title)}
             fill
             className="object-cover transition-transform duration-500 group-hover:scale-105"
