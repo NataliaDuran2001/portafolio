@@ -20,17 +20,17 @@ export default function ServicesPage() {
           <p className="text-lg text-muted-foreground leading-relaxed">{t("services.desc")}</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-20">
+        <div className="grid sm:grid-cols-2 gap-6 mb-20">
           {services.map((service) => (
             <ServiceCard key={service.slug} service={service} />
           ))}
         </div>
 
         {/* CTA */}
-        <div className="rounded-lg border border-border p-8 md:p-12">
-          <h2 className="text-2xl font-bold text-foreground mb-4">{t("services.cta.title")}</h2>
-          <p className="text-muted-foreground mb-6 max-w-xl">{t("services.cta.desc")}</p>
-          <Button asChild>
+        <div className="rounded-lg border border-border p-8 md:p-12 max-w-2xl">
+          <h2 className="text-2xl font-bold text-foreground mb-3">{t("services.cta.title")}</h2>
+          <p className="text-muted-foreground mb-6">{t("services.cta.desc")}</p>
+          <Button asChild className="focus-visible:ring-2 focus-visible:ring-ring">
             <Link href="/contact">
               <Mail className="w-4 h-4 mr-2" />
               {t("services.cta.button")}

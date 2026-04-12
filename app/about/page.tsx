@@ -16,7 +16,7 @@ export default function AboutPage() {
     <div className="pt-16">
       {/* Hero */}
       <section className="container mx-auto px-6 md:px-8 py-20">
-        <div className="flex flex-col md:flex-row gap-12 items-start">
+        <div className="flex flex-col md:flex-row gap-10 items-center md:items-start max-w-4xl">
           <div className="w-40 h-40 md:w-48 md:h-48 relative rounded-2xl overflow-hidden flex-shrink-0 border border-border">
             <img
               src={img("/images/natalia_duran.jpg")}
@@ -24,7 +24,7 @@ export default function AboutPage() {
               className="absolute inset-0 w-full h-full object-cover object-top"
             />
           </div>
-          <div className="max-w-2xl">
+          <div>
             <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               {personalInfo.name}
             </h1>
@@ -43,24 +43,39 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* What I do */}
+      {/* What I do — with titles */}
       <section className="border-t border-border">
         <div className="container mx-auto px-6 md:px-8 py-20">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-12">
             {t("about.what.title")}
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-10">
             <div className="space-y-3">
-              <Code className="w-6 h-6 text-muted-foreground" />
-              <p className="text-foreground leading-relaxed">{t("about.what.dev")}</p>
+              <div className="flex items-center gap-3 mb-1">
+                <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center">
+                  <Code className="w-5 h-5 text-foreground" />
+                </div>
+                <h3 className="font-semibold text-foreground">Engineering</h3>
+              </div>
+              <p className="text-muted-foreground leading-relaxed text-sm">{t("about.what.dev")}</p>
             </div>
             <div className="space-y-3">
-              <Users className="w-6 h-6 text-muted-foreground" />
-              <p className="text-foreground leading-relaxed">{t("about.what.community")}</p>
+              <div className="flex items-center gap-3 mb-1">
+                <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center">
+                  <Users className="w-5 h-5 text-foreground" />
+                </div>
+                <h3 className="font-semibold text-foreground">Community</h3>
+              </div>
+              <p className="text-muted-foreground leading-relaxed text-sm">{t("about.what.community")}</p>
             </div>
             <div className="space-y-3">
-              <Briefcase className="w-6 h-6 text-muted-foreground" />
-              <p className="text-foreground leading-relaxed">{t("about.what.consult")}</p>
+              <div className="flex items-center gap-3 mb-1">
+                <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center">
+                  <Briefcase className="w-5 h-5 text-foreground" />
+                </div>
+                <h3 className="font-semibold text-foreground">Consulting</h3>
+              </div>
+              <p className="text-muted-foreground leading-relaxed text-sm">{t("about.what.consult")}</p>
             </div>
           </div>
         </div>
@@ -72,17 +87,17 @@ export default function AboutPage() {
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-12">
             {t("about.leadership.title")}
           </h2>
-          <div className="space-y-12">
+          <div className="space-y-16">
             {leadership.map((item, idx) => (
               <article key={idx}>
-                <div className="mb-4">
-                  <h3 className="font-semibold text-foreground text-lg">{item.title}</h3>
+                <div className="mb-3">
+                  <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>
                   <p className="text-sm text-muted-foreground">
                     {item.organization} · {item.period}
                   </p>
                 </div>
-                <p className="text-muted-foreground mb-4">{l(item.description)}</p>
-                <ul className="space-y-1 mb-4">
+                <p className="text-muted-foreground mb-4 max-w-2xl">{l(item.description)}</p>
+                <ul className="space-y-1 mb-6">
                   {item.achievements.map((a, i) => (
                     <li key={i} className="text-sm text-muted-foreground flex items-start gap-2">
                       <span className="text-foreground/40 mt-1">—</span>
@@ -91,14 +106,9 @@ export default function AboutPage() {
                   ))}
                 </ul>
                 {item.images && item.images.length > 0 && (
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
                     {item.images.map((imgSrc, i) => (
-                      <ImageLightbox
-                        key={i}
-                        src={imgSrc}
-                        alt={`${item.title} - ${i + 1}`}
-                        aspectRatio="4/3"
-                      />
+                      <ImageLightbox key={i} src={imgSrc} alt={`${item.title} - ${i + 1}`} aspectRatio="4/3" />
                     ))}
                   </div>
                 )}
@@ -106,33 +116,26 @@ export default function AboutPage() {
             ))}
 
             {communityPhotos.length > 0 && (
-              <div>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                  {communityPhotos.map((photo, i) => (
-                    <ImageLightbox
-                      key={i}
-                      src={photo.src}
-                      alt={l(photo.alt)}
-                      aspectRatio="4/3"
-                    />
-                  ))}
-                </div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                {communityPhotos.map((photo, i) => (
+                  <ImageLightbox key={i} src={photo.src} alt={l(photo.alt)} aspectRatio="4/3" />
+                ))}
               </div>
             )}
           </div>
         </div>
       </section>
 
-      {/* Tech Stack */}
+      {/* Tech Stack — compact inline */}
       <section className="border-t border-border">
         <div className="container mx-auto px-6 md:px-8 py-20">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-12">
             {t("about.skills.title")}
           </h2>
-          <div className="space-y-6">
+          <div className="space-y-5 max-w-4xl">
             {Object.entries(skillsByLevel).map(([key, group]) => (
-              <div key={key} className="flex flex-wrap items-baseline gap-2">
-                <span className="text-xs font-semibold text-muted-foreground uppercase tracking-widest w-24 flex-shrink-0">
+              <div key={key} className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4">
+                <span className="text-xs font-semibold text-muted-foreground uppercase tracking-widest sm:w-24 sm:pt-1.5 flex-shrink-0">
                   {l(group.label)}
                 </span>
                 <div className="flex flex-wrap gap-1.5">
@@ -144,9 +147,9 @@ export default function AboutPage() {
                 </div>
               </div>
             ))}
-            <div className="flex flex-wrap items-baseline gap-2">
-              <span className="text-xs font-semibold text-muted-foreground uppercase tracking-widest w-24 flex-shrink-0">
-                Methods
+            <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4">
+              <span className="text-xs font-semibold text-muted-foreground uppercase tracking-widest sm:w-24 sm:pt-1.5 flex-shrink-0">
+                {t("about.skills.methods")}
               </span>
               <div className="flex flex-wrap gap-1.5">
                 {methodologies.map((m) => (
@@ -164,7 +167,7 @@ export default function AboutPage() {
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-12">
             {t("about.education.title")}
           </h2>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl">
             {education.map((item, idx) => (
               <article key={idx} className="flex items-start justify-between gap-4">
                 <div>

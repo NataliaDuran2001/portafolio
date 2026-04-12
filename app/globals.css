@@ -74,12 +74,27 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
   }
   h1, h2, h3, h4 {
     letter-spacing: -0.02em;
+  }
+  /* Accessible focus states */
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  /* Selection color */
+  ::selection {
+    background: var(--primary);
+    color: var(--primary-foreground);
   }
 }

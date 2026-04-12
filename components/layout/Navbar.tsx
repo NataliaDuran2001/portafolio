@@ -35,7 +35,7 @@ export default function Navbar() {
             </span>
           </Link>
 
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6">
             {navItems.map((item) => (
               <Link
                 key={item.href}
@@ -51,7 +51,7 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-1">
             <LanguageToggle />
             <ThemeToggle />
             <Button variant="ghost" size="icon" className="w-8 h-8" asChild>
@@ -66,11 +66,11 @@ export default function Navbar() {
             </Button>
           </div>
 
-          <div className="flex md:hidden items-center gap-1">
+          <div className="flex lg:hidden items-center gap-1">
             <LanguageToggle />
             <ThemeToggle />
             <Sheet>
-              <SheetTrigger asChild>
+              <SheetTrigger asChild className="lg:hidden">
                 <Button variant="ghost" size="icon" className="w-8 h-8">
                   <Menu className="w-5 h-5" />
                 </Button>
