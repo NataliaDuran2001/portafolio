@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { X } from "lucide-react";
+import { img } from "@/lib/image-path";
 
 interface ImageLightboxProps {
   src: string;
@@ -38,7 +39,7 @@ export function ImageLightbox({
         style={inlineStyle}
       >
         <Image
-          src={src}
+          src={img(src)}
           alt={alt}
           fill
           className="object-cover"
@@ -60,7 +61,7 @@ export function ImageLightbox({
           </button>
           <div className="relative max-w-[90vw] max-h-[90vh]" onClick={(e) => e.stopPropagation()}>
             <Image
-              src={src}
+              src={img(src)}
               alt={alt}
               width={1600}
               height={1000}

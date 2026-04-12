@@ -8,6 +8,7 @@ import { education, leadership, communityPhotos, languages } from "@/lib/data/ed
 import { skillsByLevel, methodologies } from "@/lib/data/skills";
 import { personalInfo } from "@/lib/data/personal";
 import { ImageLightbox } from "@/components/shared/image-lightbox";
+import { img } from "@/lib/image-path";
 
 export default function AboutPage() {
   const { t, l } = useLanguage();
@@ -19,7 +20,7 @@ export default function AboutPage() {
         <div className="flex flex-col md:flex-row gap-12 items-start">
           <div className="w-40 h-40 md:w-48 md:h-48 relative rounded-2xl overflow-hidden flex-shrink-0 border border-border">
             <Image
-              src="/images/natalia_duran.jpg"
+              src={img("/images/natalia_duran.jpg")}
               alt="Natalia Durán Oliva"
               fill
               className="object-cover object-top"
