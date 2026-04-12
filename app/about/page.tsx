@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Code, Users, Briefcase } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/language-context";
@@ -16,16 +15,13 @@ export default function AboutPage() {
   return (
     <div className="pt-16">
       {/* Hero */}
-      <section className="container mx-auto px-4 py-20">
+      <section className="container mx-auto px-6 md:px-8 py-20">
         <div className="flex flex-col md:flex-row gap-12 items-start">
           <div className="w-40 h-40 md:w-48 md:h-48 relative rounded-2xl overflow-hidden flex-shrink-0 border border-border">
-            <Image
+            <img
               src={img("/images/natalia_duran.jpg")}
               alt="Natalia Durán Oliva"
-              fill
-              className="object-cover object-top"
-              priority
-              sizes="192px"
+              className="absolute inset-0 w-full h-full object-cover object-top"
             />
           </div>
           <div className="max-w-2xl">
@@ -49,7 +45,7 @@ export default function AboutPage() {
 
       {/* What I do */}
       <section className="border-t border-border">
-        <div className="container mx-auto px-4 py-20">
+        <div className="container mx-auto px-6 md:px-8 py-20">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-12">
             {t("about.what.title")}
           </h2>
@@ -70,9 +66,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Community & Leadership with photos */}
+      {/* Community & Leadership */}
       <section className="border-t border-border">
-        <div className="container mx-auto px-4 py-20">
+        <div className="container mx-auto px-6 md:px-8 py-20">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-12">
             {t("about.leadership.title")}
           </h2>
@@ -96,10 +92,10 @@ export default function AboutPage() {
                 </ul>
                 {item.images && item.images.length > 0 && (
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                    {item.images.map((img, i) => (
+                    {item.images.map((imgSrc, i) => (
                       <ImageLightbox
                         key={i}
-                        src={img}
+                        src={imgSrc}
                         alt={`${item.title} - ${i + 1}`}
                         aspectRatio="4/3"
                       />
@@ -109,7 +105,6 @@ export default function AboutPage() {
               </article>
             ))}
 
-            {/* Extra community photos */}
             {communityPhotos.length > 0 && (
               <div>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -130,7 +125,7 @@ export default function AboutPage() {
 
       {/* Tech Stack */}
       <section className="border-t border-border">
-        <div className="container mx-auto px-4 py-20">
+        <div className="container mx-auto px-6 md:px-8 py-20">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-12">
             {t("about.skills.title")}
           </h2>
@@ -165,7 +160,7 @@ export default function AboutPage() {
 
       {/* Education */}
       <section className="border-t border-border">
-        <div className="container mx-auto px-4 py-20">
+        <div className="container mx-auto px-6 md:px-8 py-20">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-12">
             {t("about.education.title")}
           </h2>

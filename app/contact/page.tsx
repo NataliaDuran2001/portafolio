@@ -28,7 +28,7 @@ export default function ContactPage() {
 
   return (
     <div className="pt-16">
-      <section className="container mx-auto px-4 py-20">
+      <section className="container mx-auto px-6 md:px-8 py-20">
         <div className="max-w-2xl mb-16">
           <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">{t("contact.title")}</h1>
           <p className="text-lg text-muted-foreground leading-relaxed">{t("contact.desc")}</p>

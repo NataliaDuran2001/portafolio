@@ -14,7 +14,7 @@ export default function HomePage() {
   return (
     <div className="pt-16">
       {/* Hero */}
-      <section className="container mx-auto px-4 py-24 md:py-32 lg:py-40">
+      <section className="container mx-auto px-6 md:px-8 py-24 md:py-32 lg:py-40">
         <div className="max-w-3xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
             {personalInfo.name}
@@ -43,7 +43,7 @@ export default function HomePage() {
       </section>
 
       {/* Featured Work */}
-      <section className="container mx-auto px-4 pb-20">
+      <section className="container mx-auto px-6 md:px-8 pb-20">
         <div className="flex items-center justify-between mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground">
             {t("home.featured")}
@@ -65,7 +65,7 @@ export default function HomePage() {
 
       {/* Services CTA — subtle, not dominant */}
       <section className="border-t border-border">
-        <div className="container mx-auto px-4 py-16">
+        <div className="container mx-auto px-6 md:px-8 py-16">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
               <p className="text-sm text-muted-foreground mb-1">{t("home.services.badge")}</p>

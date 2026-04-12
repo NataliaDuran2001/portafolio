@@ -1,17 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { X } from "lucide-react";
 import { img } from "@/lib/image-path";
 
 interface ImageLightboxProps {
   src: string;
   alt: string;
-  width?: number;
-  height?: number;
-  className?: string;
-  /** Fixed thumbnail aspect ratio for grid consistency */
   aspectRatio?: "video" | "square" | "4/3";
 }
 
@@ -38,12 +33,11 @@ export function ImageLightbox({
         className={`cursor-zoom-in rounded-lg overflow-hidden border border-border hover:border-foreground/20 transition-colors block w-full relative ${aspectClass}`}
         style={inlineStyle}
       >
-        <Image
+        <img
           src={img(src)}
           alt={alt}
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 50vw, 25vw"
+          loading="lazy"
+          className="absolute inset-0 w-full h-full object-cover"
         />
       </button>
 
@@ -60,11 +54,9 @@ export function ImageLightbox({
             <X className="w-8 h-8" />
           </button>
           <div className="relative max-w-[90vw] max-h-[90vh]" onClick={(e) => e.stopPropagation()}>
-            <Image
+            <img
               src={img(src)}
               alt={alt}
-              width={1600}
-              height={1000}
               className="max-w-full max-h-[90vh] w-auto h-auto object-contain rounded-lg"
             />
           </div>
