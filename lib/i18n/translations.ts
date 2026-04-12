@@ -3,7 +3,7 @@ export const translations = {
     // Nav
     "nav.about": "About",
     "nav.experience": "Experience",
-    "nav.work": "Work",
+    "nav.work": "Projects",
     "nav.services": "Services",
     "nav.contact": "Contact",
     "nav.menu": "Menu",
@@ -39,7 +39,7 @@ export const translations = {
     "experience.subtitle": "5+ years building solutions in fintech, insurance, AI and ERP",
 
     // Work
-    "work.title": "Work",
+    "work.title": "Projects",
     "work.subtitle": "Projects that have generated real impact across different sectors",
     "work.back": "All projects",
     "work.problem": "The Problem",
@@ -107,7 +107,7 @@ export const translations = {
   es: {
     "nav.about": "Sobre mí",
     "nav.experience": "Experiencia",
-    "nav.work": "Trabajo",
+    "nav.work": "Proyectos",
     "nav.services": "Servicios",
     "nav.contact": "Contacto",
     "nav.menu": "Menú",
@@ -139,7 +139,7 @@ export const translations = {
     "experience.title": "Experiencia",
     "experience.subtitle": "Más de 5 años construyendo soluciones en fintech, seguros, AI y ERP",
 
-    "work.title": "Trabajo",
+    "work.title": "Proyectos",
     "work.subtitle": "Proyectos que han generado impacto real en distintos sectores",
     "work.back": "Todos los proyectos",
     "work.problem": "El problema",

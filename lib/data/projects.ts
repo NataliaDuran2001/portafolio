@@ -35,7 +35,7 @@ export const projects: Project[] = [
     category: { en: "AI / Agents", es: "AI / Agentes" },
     company: "Noxis AI",
     year: "2026",
-    role: { en: "Software Developer", es: "Desarrolladora de Software" },
+    role: { en: "AI Engineer", es: "AI Engineer" },
     duration: { en: "Ongoing", es: "En curso" },
     featured: true,
   },

@@ -1,28 +1,12 @@
-// Grouped by proficiency — no year counts, just categorized badges
-export const skillsByLevel = {
-  expert: {
-    label: { en: "Expert", es: "Experto" },
-    skills: ["Java", "Spring Boot", "TypeScript", "React.js", "Oracle", "MongoDB"],
-  },
-  proficient: {
-    label: { en: "Proficient", es: "Competente" },
-    skills: [
-      "NestJS", "Next.js", "Node.js", "Express", "Angular",
-      "PostgreSQL", "Docker", "Kubernetes", "Jenkins", "Azure DevOps",
-      "Apache Kafka", "Microservices", "Clean Architecture",
-    ],
-  },
-  growing: {
-    label: { en: "Growing", es: "En crecimiento" },
-    skills: [
-      "Python", "LangGraph", "LangChain", "OpenAI", "Claude",
-      "MCP Server", "AWS", "Flutter", ".NET", "SAP B1",
-    ],
-  },
+// Only market-relevant, current skills — no bloat
+export const techStack = {
+  backend: ["Java", "Spring Boot", "NestJS", "Node.js", "Python"],
+  frontend: ["React.js", "Next.js", "TypeScript", "Angular"],
+  data: ["MongoDB", "PostgreSQL", "Oracle", "Apache Kafka"],
+  infra: ["Docker", "Kubernetes", "AWS", "CI/CD"],
+  ai: ["LangGraph", "OpenAI", "MCP Server"],
 };
 
 export const methodologies = [
-  "SCRUM", "Agile", "CI/CD", "Event-Driven Architecture",
-  "Hexagonal Architecture", "OWASP / ASVS", "REST APIs",
-  "Project Management (PMI)", "Claude Code",
+  "Microservices", "Clean Architecture", "SCRUM", "Project Management (PMI)",
 ];

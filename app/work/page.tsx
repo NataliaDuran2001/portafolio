@@ -15,8 +15,8 @@ export default function WorkPage() {
           <p className="text-lg text-muted-foreground max-w-2xl">{t("work.subtitle")}</p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project) => (
-            <ProjectCard key={project.slug} project={project} />
+          {projects.map((project, idx) => (
+            <ProjectCard key={project.slug} project={project} index={idx} />
           ))}
         </div>
       </section>

@@ -2,7 +2,7 @@ import type { Experience } from "../types";
 
 export const experiences: Experience[] = [
   {
-    title: { en: "Software Developer", es: "Desarrolladora de Software" },
+    title: { en: "AI Engineer", es: "AI Engineer" },
     company: "Noxis AI",
     period: "abril 2026 – Presente",
     location: "Santa Cruz, Bolivia",
