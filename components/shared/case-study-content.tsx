@@ -34,7 +34,6 @@ export function CaseStudyContent({ slug }: { slug: string }) {
             <span><strong className="text-foreground">{t("work.company")}:</strong> {project.company}</span>
             <span><strong className="text-foreground">{t("work.role")}:</strong> {l(project.role)}</span>
             <span><strong className="text-foreground">{t("work.period")}:</strong> {project.year}</span>
-            <span><strong className="text-foreground">{t("work.duration")}:</strong> {l(project.duration)}</span>
           </div>
         </div>
 
@@ -43,6 +42,7 @@ export function CaseStudyContent({ slug }: { slug: string }) {
             src={project.image}
             alt={l(project.title)}
             aspectRatio="video"
+            gallery={project.gallery.length > 1 ? project.gallery : undefined}
           />
         </div>
 
@@ -81,12 +81,14 @@ export function CaseStudyContent({ slug }: { slug: string }) {
           <section className="mt-16">
             <h2 className="text-xl font-semibold text-foreground mb-6">{t("work.gallery")}</h2>
             <div className="grid md:grid-cols-2 gap-4">
-              {project.gallery.map((img, idx) => (
+              {project.gallery.map((imgSrc, idx) => (
                 <ImageLightbox
                   key={idx}
-                  src={img}
+                  src={imgSrc}
                   alt={`${l(project.title)} - ${idx + 1}`}
                   aspectRatio="video"
+                  gallery={project.gallery}
+                  startIndex={idx}
                 />
               ))}
             </div>

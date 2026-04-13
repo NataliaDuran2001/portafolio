@@ -41,12 +41,12 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
             className="flex flex-col items-center text-center"
           >
-            <div className="w-36 h-36 md:w-44 md:h-44 relative rounded-full overflow-hidden border-4 border-background shadow-2xl mb-6">
+            <div className="w-44 h-44 md:w-56 md:h-56 relative rounded-full overflow-hidden border-4 border-background shadow-2xl mb-6">
               <img
                 src={img("/images/natalia_duran.jpg")}
                 alt="Natalia Durán Oliva"
-                className="absolute inset-0 w-full h-full object-cover"
-                style={{ objectPosition: "center 20%" }}
+                className="absolute inset-0 w-full h-full object-cover scale-150"
+                style={{ objectPosition: "center 35%" }}
               />
             </div>
             <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
@@ -243,9 +243,9 @@ export default function AboutPage() {
               </Link>
             </Button>
             <Button asChild>
-              <Link href="/contact">
+              <a href={`https://wa.me/${personalInfo.phone}`} target="_blank" rel="noopener noreferrer">
                 {locale === "es" ? "Hablemos" : "Let's talk"}
-              </Link>
+              </a>
             </Button>
           </div>
         </motion.div>

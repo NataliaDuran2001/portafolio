@@ -14,18 +14,18 @@ export const personalInfo = {
   github: "https://github.com/NataliaDuran2001",
   cv: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/cv-natalia-duran.pdf`,
   bio: {
-    en: "Software engineer, community leader, and independent consultant. I build scalable software, lead tech communities, organize events, and help teams grow. 5+ years shipping products in fintech, insurance, AI, and energy.",
-    es: "Ingeniera de software, líder de comunidad y consultora independiente. Construyo software escalable, lidero comunidades tech, organizo eventos y ayudo a equipos a crecer. 5+ años desarrollando productos en fintech, seguros, AI y energía.",
+    en: "Software engineer, community leader, and independent consultant. I build scalable software, lead tech communities, organize events, and help teams grow. 6+ years shipping products in fintech, insurance, AI, and energy.",
+    es: "Ingeniera de software, líder de comunidad y consultora independiente. Construyo software escalable, lidero comunidades tech, organizo eventos y ayudo a equipos a crecer. 6+ años desarrollando productos en fintech, seguros, AI y energía.",
   } as L,
   highlights: {
     en: [
-      { number: "5+", label: "Years of experience" },
+      { number: "6+", label: "Years of experience" },
       { number: "6", label: "Companies worked with" },
       { number: "10+", label: "Projects delivered" },
       { number: "4", label: "Industries" },
     ],
     es: [
-      { number: "5+", label: "Años de experiencia" },
+      { number: "6+", label: "Años de experiencia" },
       { number: "6", label: "Empresas" },
       { number: "10+", label: "Proyectos entregados" },
       { number: "4", label: "Industrias" },
