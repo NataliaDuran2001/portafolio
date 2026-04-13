@@ -1,7 +1,7 @@
 export const translations = {
   en: {
     // Nav
-    "nav.about": "About",
+    "nav.about": "About me",
     "nav.experience": "Experience",
     "nav.work": "Projects",
     "nav.services": "Services",
@@ -36,7 +36,7 @@ export const translations = {
 
     // Experience
     "experience.title": "Experience",
-    "experience.subtitle": "5+ years building solutions in fintech, insurance, AI and ERP",
+    "experience.subtitle": "6+ years building solutions in fintech, insurance, AI and ERP",
 
     // Work
     "work.title": "Projects",
@@ -137,7 +137,7 @@ export const translations = {
     "about.languages.title": "Idiomas",
 
     "experience.title": "Experiencia",
-    "experience.subtitle": "Más de 5 años construyendo soluciones en fintech, seguros, AI y ERP",
+    "experience.subtitle": "Más de 6 años construyendo soluciones en fintech, seguros, AI y ERP",
 
     "work.title": "Proyectos",
     "work.subtitle": "Proyectos que han generado impacto real en distintos sectores",

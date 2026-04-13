@@ -27,12 +27,12 @@ export default function HomePage() {
             transition={{ duration: 0.6 }}
             className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-10"
           >
-            <div className="w-36 h-36 md:w-44 md:h-44 relative rounded-2xl overflow-hidden flex-shrink-0 border-2 border-foreground/10 shadow-2xl">
+            <div className="w-40 h-40 md:w-48 md:h-48 relative rounded-2xl overflow-hidden flex-shrink-0 border-2 border-foreground/10 shadow-2xl">
               <img
                 src={img("/images/natalia_duran.jpg")}
                 alt="Natalia Durán Oliva"
-                className="absolute inset-0 w-full h-full object-cover"
-                style={{ objectPosition: "center 20%" }}
+                className="absolute inset-0 w-full h-full object-cover scale-150"
+                style={{ objectPosition: "center 35%" }}
               />
             </div>
             <div className="text-center md:text-left">
