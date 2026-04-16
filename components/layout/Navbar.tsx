@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Github, Linkedin, Mail } from "lucide-react";
+import { Menu, Mail } from "lucide-react";
 import { ThemeToggle } from "@/components/shared/theme-toggle";
 import { LanguageToggle } from "@/components/shared/language-toggle";
 import { useLanguage } from "@/lib/i18n/language-context";
@@ -57,16 +57,6 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-1">
             <LanguageToggle />
             <ThemeToggle />
-            <Button variant="ghost" size="icon" className="w-8 h-8" asChild>
-              <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <Linkedin className="w-4 h-4" />
-              </a>
-            </Button>
-            <Button variant="ghost" size="icon" className="w-8 h-8" asChild>
-              <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                <Github className="w-4 h-4" />
-              </a>
-            </Button>
           </div>
 
           <div className="flex lg:hidden items-center gap-1">
@@ -97,16 +87,6 @@ export default function Navbar() {
                     </Link>
                   ))}
                   <div className="flex items-center gap-2 pt-6 border-t border-border">
-                    <Button variant="ghost" size="icon" asChild>
-                      <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                        <Linkedin className="w-4 h-4" />
-                      </a>
-                    </Button>
-                    <Button variant="ghost" size="icon" asChild>
-                      <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                        <Github className="w-4 h-4" />
-                      </a>
-                    </Button>
                     <Button variant="ghost" size="icon" asChild>
                       <a href={`mailto:${personalInfo.email}`} aria-label="Email">
                         <Mail className="w-4 h-4" />
