@@ -1,6 +1,7 @@
 export const translations = {
   en: {
     // Nav
+    "nav.home": "Home",
     "nav.about": "About me",
     "nav.experience": "Experience",
     "nav.work": "Projects",
@@ -105,6 +106,7 @@ export const translations = {
     "404.back": "Back to home",
   },
   es: {
+    "nav.home": "Inicio",
     "nav.about": "Sobre mí",
     "nav.experience": "Experiencia",
     "nav.work": "Proyectos",
