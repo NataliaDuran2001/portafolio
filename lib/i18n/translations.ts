@@ -17,7 +17,7 @@ export const translations = {
     "home.featured.all": "View all",
     "home.services.badge": "Available for consulting",
     "home.services.title": "Need help with your project?",
-    "home.services.desc": "I offer technical audits, MVP development, and team training. 5+ years of experience in fintech, insurance, and ERP.",
+    "home.services.desc": "I offer technical audits, MVP development, and team training. 5+ years of experience in fintech, insurance, ERP, and CRM.",
     "home.services.cta": "View services",
 
     // About
@@ -37,7 +37,7 @@ export const translations = {
 
     // Experience
     "experience.title": "Experience",
-    "experience.subtitle": "6+ years building solutions in fintech, insurance, AI and ERP",
+    "experience.subtitle": "6+ years building solutions in fintech, insurance, AI, ERP, and CRM",
 
     // Work
     "work.title": "Projects",
@@ -56,7 +56,7 @@ export const translations = {
     // Services
     "services.badge": "Independent consulting",
     "services.title": "Services",
-    "services.desc": "I help companies and teams build robust software, scale their architecture, and adopt best practices. 5+ years of experience in fintech, insurance, ERP, and AI.",
+    "services.desc": "I help companies and teams build robust software, scale their architecture, and adopt best practices. 5+ years of experience in fintech, insurance, ERP, CRM, and AI.",
     "services.includes": "Includes:",
     "services.idealFor": "Ideal for:",
     "services.delivery": "Estimated delivery",
@@ -121,7 +121,7 @@ export const translations = {
     "home.featured.all": "Ver todo",
     "home.services.badge": "Disponible para consultoría",
     "home.services.title": "¿Necesitas ayuda con tu proyecto?",
-    "home.services.desc": "Ofrezco auditorías técnicas, desarrollo de MVPs y capacitación de equipos. Más de 5 años de experiencia en fintech, seguros y ERP.",
+    "home.services.desc": "Ofrezco auditorías técnicas, desarrollo de MVPs y capacitación de equipos. Más de 5 años de experiencia en fintech, seguros, ERP y CRM.",
     "home.services.cta": "Ver servicios",
 
     "about.title": "Sobre mí",
@@ -139,7 +139,7 @@ export const translations = {
     "about.languages.title": "Idiomas",
 
     "experience.title": "Experiencia",
-    "experience.subtitle": "Más de 6 años construyendo soluciones en fintech, seguros, AI y ERP",
+    "experience.subtitle": "Más de 6 años construyendo soluciones en fintech, seguros, AI, ERP y CRM",
 
     "work.title": "Proyectos",
     "work.subtitle": "Proyectos que han generado impacto real en distintos sectores",
@@ -156,7 +156,7 @@ export const translations = {
 
     "services.badge": "Consultoría independiente",
     "services.title": "Servicios",
-    "services.desc": "Ayudo a empresas y equipos a construir software robusto, escalar su arquitectura y adoptar mejores prácticas. Más de 5 años de experiencia en fintech, seguros, ERP y AI.",
+    "services.desc": "Ayudo a empresas y equipos a construir software robusto, escalar su arquitectura y adoptar mejores prácticas. Más de 5 años de experiencia en fintech, seguros, ERP, CRM y AI.",
     "services.includes": "Incluye:",
     "services.idealFor": "Ideal para:",
     "services.delivery": "Entrega estimada",

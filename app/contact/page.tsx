@@ -12,7 +12,7 @@ const fadeIn = {
 };
 
 export default function ContactPage() {
-  const { t, l, locale } = useLanguage();
+  const { t, locale } = useLanguage();
 
   return (
     <div className="pt-16">
