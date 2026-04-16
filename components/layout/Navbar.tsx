@@ -15,11 +15,15 @@ export default function Navbar() {
   const { t } = useLanguage();
 
   const navItems = [
+    { name: t("nav.home"), href: "/" },
     { name: t("nav.about"), href: "/about" },
     { name: t("nav.experience"), href: "/experience" },
     { name: t("nav.work"), href: "/work" },
     { name: t("nav.contact"), href: "/contact" },
   ];
+
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border">
@@ -40,7 +44,7 @@ export default function Navbar() {
                 key={item.href}
                 href={item.href}
                 className={`text-sm transition-colors ${
-                  pathname.startsWith(item.href)
+                  isActive(item.href)
                     ? "text-foreground font-medium"
                     : "text-muted-foreground hover:text-foreground"
                 }`}
@@ -84,7 +88,7 @@ export default function Navbar() {
                       key={item.href}
                       href={item.href}
                       className={`text-lg transition-colors ${
-                        pathname.startsWith(item.href)
+                        isActive(item.href)
                           ? "text-foreground font-medium"
                           : "text-muted-foreground hover:text-foreground"
                       }`}
