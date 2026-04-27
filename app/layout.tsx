@@ -59,6 +59,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: BASE_URL,
   },
+  manifest: "/manifest.json",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -70,10 +71,10 @@ export const metadata: Metadata = {
       "Software Engineer, AI Engineer & Independent Consultant. 6+ years building scalable software. Community leader at GDG & WTM Santa Cruz, Bolivia.",
     images: [
       {
-        url: `${BASE_URL}/images/natalia_duran.jpg`,
-        width: 800,
-        height: 800,
-        alt: "Natalia Durán Oliva",
+        url: `${BASE_URL}/og-image.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Natalia Durán Oliva — Software Engineer & Independent Consultant",
       },
     ],
   },
@@ -82,9 +83,12 @@ export const metadata: Metadata = {
     title: "Natalia Durán Oliva — Software Engineer & Consultant",
     description:
       "Software Engineer, AI Engineer & Independent Consultant. 6+ years building scalable software.",
-    images: [`${BASE_URL}/images/natalia_duran.jpg`],
+    images: [`${BASE_URL}/og-image.jpg`],
   },
   category: "technology",
+  // verification: {
+  //   google: "<paste-your-Google-Search-Console-token-here>",
+  // },
 };
 
 export default function RootLayout({
@@ -94,9 +98,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
-      <head>
-        <link rel="icon" href="/favicon.ico" />
-      </head>
       <body className="font-sans bg-background text-foreground antialiased">
         <Providers>
           <PersonJsonLd />

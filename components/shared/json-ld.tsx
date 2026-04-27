@@ -80,3 +80,90 @@ export function WebSiteJsonLd() {
     />
   );
 }
+
+interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
+
+export function BreadcrumbsJsonLd({ items }: { items: BreadcrumbItem[] }) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+interface CaseStudyJsonLdProps {
+  title: string;
+  description: string;
+  url: string;
+  image: string;
+  category: string;
+  technologies: string[];
+  year: string;
+  publisher?: string;
+}
+
+export function CaseStudyJsonLd({
+  title,
+  description,
+  url,
+  image,
+  category,
+  technologies,
+  year,
+  publisher,
+}: CaseStudyJsonLdProps) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: title,
+    headline: title,
+    description,
+    url,
+    image,
+    inLanguage: "en",
+    dateCreated: year,
+    datePublished: year,
+    creator: {
+      "@type": "Person",
+      name: "Natalia Durán Oliva",
+      url: SITE_URL,
+    },
+    author: {
+      "@type": "Person",
+      name: "Natalia Durán Oliva",
+      url: SITE_URL,
+    },
+    about: category,
+    keywords: technologies.join(", "),
+    ...(publisher && {
+      sourceOrganization: { "@type": "Organization", name: publisher },
+    }),
+    isPartOf: {
+      "@type": "WebSite",
+      name: "Natalia Durán Oliva",
+      url: SITE_URL,
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
