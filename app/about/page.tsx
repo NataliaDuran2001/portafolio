@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     description:
       "Full Stack Engineer with 6+ years building software in fintech, insurance, AI, and energy. Community leader in Bolivia.",
     url: "https://nataliaduran.dev/about/",
+    images: [
+      {
+        url: "https://nataliaduran.dev/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Natalia Durán Oliva — Software Engineer & Independent Consultant",
+      },
+    ],
   },
 };
 

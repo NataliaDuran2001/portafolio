@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     description:
       "Get in touch about consulting, mentoring, or collaborations. I reply within 24 hours.",
     url: "https://nataliaduran.dev/contact/",
+    images: [
+      {
+        url: "https://nataliaduran.dev/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Natalia Durán Oliva — Software Engineer & Independent Consultant",
+      },
+    ],
   },
 };
 

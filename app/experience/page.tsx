@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     description:
       "6+ years building solutions in fintech, insurance, AI, ERP, and CRM across Latin America.",
     url: "https://nataliaduran.dev/experience/",
+    images: [
+      {
+        url: "https://nataliaduran.dev/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Natalia Durán Oliva — Software Engineer & Independent Consultant",
+      },
+    ],
   },
 };
 

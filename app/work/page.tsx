@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     description:
       "Selected case studies — fintech apps, AI agents, CRM platforms, and insurance portals.",
     url: "https://nataliaduran.dev/work/",
+    images: [
+      {
+        url: "https://nataliaduran.dev/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Natalia Durán Oliva — Software Engineer & Independent Consultant",
+      },
+    ],
   },
 };
 

@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     description:
       "Technical audits, MVP development, AI integration, and team training for startups and product teams.",
     url: "https://nataliaduran.dev/services/",
+    images: [
+      {
+        url: "https://nataliaduran.dev/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Natalia Durán Oliva — Software Engineer & Independent Consultant",
+      },
+    ],
   },
 };
 
