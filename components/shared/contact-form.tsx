@@ -14,7 +14,13 @@ export function ContactForm() {
     setStatus("sending");
 
     const formData = new FormData(e.currentTarget);
+    const name = (formData.get("name") as string) || "Anonymous";
+    const email = (formData.get("email") as string) || "";
+
     formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "");
+    formData.set("from_name", name);
+    formData.set("subject", `New contact from ${name} — Portfolio`);
+    if (email) formData.set("replyto", email);
 
     try {
       const res = await fetch("https://api.web3forms.com/submit", {
@@ -48,9 +54,6 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      <input type="hidden" name="from_name" value="Portfolio Contact Form" />
-      <input type="hidden" name="subject" value="New message from portfolio" />
-
       <div className="grid md:grid-cols-2 gap-4">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
