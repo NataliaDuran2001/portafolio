@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nataliaduran2001.github.io/portafolio/sitemap.xml
+Sitemap: https://nataliaduran.dev/sitemap.xml

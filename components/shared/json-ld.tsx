@@ -1,11 +1,13 @@
+const SITE_URL = "https://nataliaduran.dev";
+
 export function PersonJsonLd() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Natalia Durán Oliva",
     jobTitle: "Software Engineer & Independent Consultant",
-    url: "https://nataliaduran2001.github.io/portafolio",
-    image: "https://nataliaduran2001.github.io/portafolio/images/natalia_duran.jpg",
+    url: SITE_URL,
+    image: `${SITE_URL}/images/natalia_duran.jpg`,
     email: "nataliaduran.dev@gmail.com",
     telephone: "+59178482245",
     sameAs: [
@@ -46,6 +48,29 @@ export function PersonJsonLd() {
       { "@type": "Organization", name: "LOLA - Libertad y Oportunidad Latinoamérica" },
       { "@type": "Organization", name: "Students For Liberty" },
     ],
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+export function WebSiteJsonLd() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Natalia Durán Oliva",
+    alternateName: "Natalia Durán — Software Engineer Portfolio",
+    url: SITE_URL,
+    inLanguage: ["en", "es"],
+    publisher: {
+      "@type": "Person",
+      name: "Natalia Durán Oliva",
+      url: SITE_URL,
+    },
   };
 
   return (

@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import { PersonJsonLd } from "@/components/shared/json-ld";
+import { PersonJsonLd, WebSiteJsonLd } from "@/components/shared/json-ld";
 import { Providers } from "@/components/shared/providers";
 
 const inter = Inter({
@@ -12,7 +12,7 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-const BASE_URL = "https://nataliaduran2001.github.io/portafolio";
+const BASE_URL = "https://nataliaduran.dev";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -95,11 +95,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/portafolio/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" />
       </head>
       <body className="font-sans bg-background text-foreground antialiased">
         <Providers>
           <PersonJsonLd />
+          <WebSiteJsonLd />
           <Navbar />
           <main className="min-h-screen">{children}</main>
           <Footer />
