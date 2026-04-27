@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /cv-natalia-duran.pdf
 
 Sitemap: https://nataliaduran.dev/sitemap.xml

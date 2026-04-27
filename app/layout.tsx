@@ -86,10 +86,9 @@ export const metadata: Metadata = {
     images: [`${BASE_URL}/og-image.jpg`],
   },
   category: "technology",
-  // verification: {
-  //   google: "<paste-your-Google-Search-Console-token-here>",
-  // },
 };
+
+const cfAnalyticsToken = process.env.NEXT_PUBLIC_CF_ANALYTICS_TOKEN;
 
 export default function RootLayout({
   children,
@@ -106,6 +105,13 @@ export default function RootLayout({
           <main className="min-h-screen">{children}</main>
           <Footer />
         </Providers>
+        {cfAnalyticsToken && (
+          <script
+            defer
+            src="https://static.cloudflareinsights.com/beacon.min.js"
+            data-cf-beacon={`{"token": "${cfAnalyticsToken}"}`}
+          />
+        )}
       </body>
     </html>
   );
