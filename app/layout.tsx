@@ -88,7 +88,7 @@ export const metadata: Metadata = {
   category: "technology",
 };
 
-const cfAnalyticsToken = process.env.NEXT_PUBLIC_CF_ANALYTICS_TOKEN;
+const CF_ANALYTICS_TOKEN = "af90e911e6a54e2281e7e1f7bfb18b2c";
 
 export default function RootLayout({
   children,
@@ -105,13 +105,11 @@ export default function RootLayout({
           <main className="min-h-screen">{children}</main>
           <Footer />
         </Providers>
-        {cfAnalyticsToken && (
-          <script
-            defer
-            src="https://static.cloudflareinsights.com/beacon.min.js"
-            data-cf-beacon={`{"token": "${cfAnalyticsToken}"}`}
-          />
-        )}
+        <script
+          defer
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon={`{"token": "${CF_ANALYTICS_TOKEN}"}`}
+        />
       </body>
     </html>
   );

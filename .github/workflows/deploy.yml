@@ -30,7 +30,6 @@ jobs:
       - run: npm run build
         env:
           NEXT_PUBLIC_WEB3FORMS_KEY: ${{ secrets.WEB3FORMS_KEY }}
-          NEXT_PUBLIC_CF_ANALYTICS_TOKEN: ${{ secrets.CF_ANALYTICS_TOKEN }}
 
       - uses: actions/upload-pages-artifact@v4
         with:
