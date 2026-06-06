@@ -2,9 +2,34 @@ import type { Experience } from "../types";
 
 export const experiences: Experience[] = [
   {
+    title: { en: "AI Fullstack Developer", es: "AI Fullstack Developer" },
+    company: "comocom",
+    period: "mayo 2026 – Presente",
+    location: "Berlin, Germany (Remote)",
+    description: {
+      en: "AI Fullstack developer at a German software consultancy, building production software with an AI-first, spec-driven development approach.",
+      es: "Developer AI Fullstack en una consultora de software alemana, construyendo software de producción con un enfoque AI-first y spec-driven development.",
+    },
+    achievements: [
+      {
+        en: "AI-first, spec-driven development as the core workflow",
+        es: "AI-first y spec-driven development como flujo de trabajo central",
+      },
+      {
+        en: "Self-managed, end-to-end delivery",
+        es: "Autogestión y entrega de punta a punta",
+      },
+      {
+        en: "AI Builder and solutions architect for AI-powered products",
+        es: "AI Builder y arquitecta de soluciones para productos potenciados por AI",
+      },
+    ],
+    technologies: ["Claude Code", "Next.js", "TypeScript", "Spec-Driven Development", "AI-First"],
+  },
+  {
     title: { en: "AI Engineer", es: "AI Engineer" },
     company: "Noxis AI",
-    period: "abril 2026 – Presente",
+    period: "abril 2026 – mayo 2026",
     location: "Santa Cruz, Bolivia",
     description: {
       en: "Migration of an n8n-based chatbot system with autonomous AI agent to an MCP server with multi-tenant LangGraph agent for customer service and catalog product sales for small businesses.",

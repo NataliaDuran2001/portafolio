@@ -3,8 +3,8 @@ import type { L } from "../types";
 export const personalInfo = {
   name: "Natalia Durán Oliva",
   title: {
-    en: "Software Engineer & Independent Consultant",
-    es: "Software Engineer & Consultora Independiente",
+    en: "AI Engineer & Software Consultant",
+    es: "AI Engineer & Consultora de Software",
   } as L,
   email: "nataliaduran.dev@gmail.com",
   phone: "+59178482245",
@@ -20,13 +20,13 @@ export const personalInfo = {
   highlights: {
     en: [
       { number: "6+", label: "Years of experience" },
-      { number: "6", label: "Companies worked with" },
+      { number: "7", label: "Companies worked with" },
       { number: "10+", label: "Projects delivered" },
       { number: "4", label: "Industries" },
     ],
     es: [
       { number: "6+", label: "Años de experiencia" },
-      { number: "6", label: "Empresas" },
+      { number: "7", label: "Empresas" },
       { number: "10+", label: "Proyectos entregados" },
       { number: "4", label: "Industrias" },
     ],
