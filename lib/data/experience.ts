@@ -24,7 +24,7 @@ export const experiences: Experience[] = [
         es: "AI Builder y arquitecta de soluciones para productos potenciados por AI",
       },
     ],
-    technologies: ["Claude Code", "Next.js", "TypeScript", "Spec-Driven Development", "AI-First"],
+    technologies: ["Claude Code", "Python", "TypeScript", "Agentic Programming", "Spec-Driven Development", "AI-First"],
   },
   {
     title: { en: "AI Engineer", es: "AI Engineer" },
